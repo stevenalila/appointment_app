@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Index page Appointment Overview{% endblock %}
+
+{% block content %}
+	<table>
+  {% for appointment in today_appointments %}
+    <tr>
+    <td> {{appointment.task}}  </td>
+    <td><a href="{{appointment.get_absolute_url}}">Edit</a></td>
+    <td><a href="{{appointment.get_delete_url}}"> Delete</a></td>
+    </tr>
+  {% endfor %}
+ 	</table>
+ <br>
+ 	<table>
+ 	{% for appointment in tomorrow_appointments %}
+ <tr>
+ <td>{{appointment.task}} </td>
+ <td>{{appointment.status}}</td>
+ <td>{{appointment.datetime}}</td>
+ </tr>
+ {% endfor %}
+ </table>
+{% endblock %}

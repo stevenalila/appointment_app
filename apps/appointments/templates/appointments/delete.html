@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Appointments{% endblock %}
+
+{% block content %}
+	<h1>Delete Appointments</h1>
+	<form method="POST">
+	{% csrf_token %}
+	<p>Would you like to delete this appointment</p>
+	<input type="submit" value="Submit">
+	</form>
+{% endblock %}
